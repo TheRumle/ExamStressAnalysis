@@ -3,6 +3,9 @@
 
 # This guard is used to ensure that the file is not executed on import time
 if __name__ == '__main__':
+    # Before you start!!
+    # Create a new branch on git (button of pycharm --> terminal --> switch to Git Bash (or install if needed) git checkout -m nameRelatedToFunctionalityOrResultYouTryToAccomplish)
+
     # To work with very thin slices of functionality (which greatly help with motivation and debugging)
     # start by making a simple dataclass (google it) for some of the data and analyse that part of the data.
     # Dataclasses will help you get autocompletion
