@@ -2,11 +2,42 @@
 # Press the green button in the gutter to run the script.
 
 # This guard is used to ensure that the file is not executed on import time
-if __name__ == '__main__':
-    # Before you start!!
-    # Create a new branch on git (button of pycharm --> terminal --> switch to Git Bash (or install if needed) git checkout -m nameRelatedToFunctionalityOrResultYouTryToAccomplish)
+import os
 
-    # To work with very thin slices of functionality (which greatly help with motivation and debugging)
+import pandas as pandas
+
+
+class Midterm:
+    tempData:list
+    edaData:list
+
+class Student:
+    midterm: Midterm
+
+if __name__ == '__main__':
+
+    # Få data i et bedre format
+        # For each student folder: in final and both midterm folders: read TEMP.csv and EDA.csv
+    # Visualiser data enkeltvis
+        # Make folder to save the visualisations in (REMEMBER TO SAVE)
+    x = [x[0] for x in os.walk(os.getcwd())]
+
+    dataPath = os.path.join(os.getcwd(), "data")
+    student_folders = [f.path for f in os.scandir(dataPath) if f.is_dir()]
+
+    data: dict[str, Student] = dict()
+
+    temperature = []
+    for folder in student_folders:
+        pathTemp = folder + '\\final\TEMP.csv'
+        temperature.append(pandas.read_csv(pathTemp))
+        data.get(folder).midterm.tempData.append(pandas.read_csv(pathTemp))
+
+    dict.get('').
+
+    print(temperature)
+
+
     # start by making a simple dataclass (google it) for some of the data and analyse that part of the data.
     # Dataclasses will help you get autocompletion
     # put the dataclasses in a Python Project (top right corner of pycharm, right click ExamStressAnalysis --> new --> python package )
