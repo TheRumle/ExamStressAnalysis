@@ -1,7 +1,6 @@
-from dataclasses import dataclass
+from attr import dataclass
 
 
-@dataclass
 class Exam:
     tempData: dict
     edaData: dict
@@ -10,7 +9,7 @@ class Exam:
     hrData: dict
     ibiData: dict
 
-    def __init__(self, temp='Not defined', eda='Not defined', acc='Not defined', bvp='Not defined', hr='Not defined', ibi='Not defined'):
+    def __init__(self, temp=None, eda=None, acc=None, bvp=None, hr=None, ibi=None):
         self.tempData = temp
         self.edaData = eda
         self.accData = acc
@@ -25,7 +24,3 @@ class Student:
     second_midterm: Exam
     final: Exam
 
-    def __init__(self, first_midterm, second_midterm, final):
-        self.first_midterm = first_midterm
-        self.second_midterm = second_midterm
-        self.final = final
