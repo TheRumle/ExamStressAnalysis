@@ -1,31 +1,25 @@
+import matplotlib.pyplot as plt
+import pandas as pd
 
-# Press the green button in the gutter to run the script.
+from ExamStressFunctions import read_and_create_datasets
 
-# This guard is used to ensure that the file is not executed on import time
 if __name__ == '__main__':
-    # Before you start!!
-    # Create a new branch on git (button of pycharm --> terminal --> switch to Git Bash (or install if needed) git checkout -m nameRelatedToFunctionalityOrResultYouTryToAccomplish)
+    student_datasets = read_and_create_datasets(['TEMP.csv', 'EDA.csv'])
 
-    # To work with very thin slices of functionality (which greatly help with motivation and debugging)
-    # start by making a simple dataclass (google it) for some of the data and analyse that part of the data.
-    # Dataclasses will help you get autocompletion
-    # put the dataclasses in a Python Project (top right corner of pycharm, right click ExamStressAnalysis --> new --> python package )
+    # max_length = max(len(student_datasets['S1'].final.tempData), len(student_datasets['S2'].final.tempData))
+    print(max_length)
+
+    # dataframe_data = [[student_datasets['S1'].final.tempData], [student_datasets['S2'].final.tempData], [student_datasets['S3'].final.tempData], [student_datasets['S4'].final.tempData], [student_datasets['S5'].final.tempData], [student_datasets['S6'].final.tempData], [student_datasets['S7'].final.tempData], [student_datasets['S8'].final.tempData], [student_datasets['S9'].final.tempData], [student_datasets['S10'].final.tempData]]
+    # temperature = pd.DataFrame(data=dataframe_data)
+    # columns=['Student 1', 'Student 2', 'Student 3', 'Student 4', 'Student 5', 'Student 6', 'Student 7', 'Student 8', 'Student 9', 'Student 10']
+    # temperature.drop(index=temperature.index[:2], axis=0, inplace=True)
+    # print(temperature)
+    # plt.plot(temperature)
+    # plt.show()
+    # Visualiser data enkeltvis
+    # Make folder to save the visualisations in (REMEMBER TO SAVE)
+
+    # put the datacontainers in a Python Project (top right corner of pycharm, right click ExamStressAnalysis --> new -->
+    # python package )
     # then right click on the new package --> new --> python class
-    # ignore the __init__.py file. Do not touch it. The file is executed on import time, and the classes defined in it is bound to variable names
-    # Pro tip when using pycharm: use alt+enter or ctrl+space to get autocompletion!
-
-    #Step 1 - choose first data to analyse, maybe pick something easy.
-    #Step 2 - create a dataclass for that data. Example:
-    '''
-    @dataclass
-    class TemperatureContainer:
-        date: datetime
-        temperatures: List[Number] #In a dataclass we annotate the data with types. The right hand side of the ':' defines the type of the field.
-    @dataclass <-- This is called an annotation! It helps the coder to define some behaviour for the code. In this case
-    we tell the coder, interpreter and IDE that the class cannot contain methods, only fields. 
-    '''
-
-    # Consider making a dataclass for the data itself --- for instance, a HeartRateMeasurementContainer that has a list of HeartRateMeasurement
-
-    # Step 3 - Analyse the data, and save the result in a file at some reasonable place
     pass
